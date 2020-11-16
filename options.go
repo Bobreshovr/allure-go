@@ -24,6 +24,12 @@ func Epic(epic string) Option {
 	}
 }
 
+func Label(name, value string) Option {
+	return func(r hasOptions) {
+		r.addLabel(name, value)
+	}
+}
+
 func Severity(severity severity.Severity) Option {
 	return func(r hasOptions) {
 		r.addLabel("severity", string(severity))
